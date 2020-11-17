@@ -6,9 +6,9 @@ app.use(express.static('public'))
 app.use(express.json({limit: '1mb'}))
 app.use(cors())
 
-const connectDB = require('./database/mainDB')
+//const connectDB = require('./database/mainDB')
 
-connectDB()
+//connectDB()
 
 const PORT = process.env.PORT || 5000;
 
@@ -17,10 +17,10 @@ const PORT = process.env.PORT || 5000;
 TODO: when done building change to MongoDB
 NEDB used for testing
 */
-// const Datastore = require('nedb');
+const Datastore = require('nedb');
 
-// const database = new Datastore('test.db');
-// database.loadDatabase();
+const database = new Datastore('test.db');
+database.loadDatabase();
 
 
 
