@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server",
-    "client": "npm start --prefix client",
+    "client": "cd ./client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
+
   },
   "keywords": [
     "data",
@@ -26,5 +27,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.13",
     "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "nedb": "^1.8.0"
   }
 }
