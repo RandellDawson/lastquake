@@ -8,7 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import './Landing.css'
-import { Search } from '../../component/Search/Search';
+// import { Search } from '../../component/Search/Search';
 
 
 export const Landing = () => {
@@ -17,7 +17,6 @@ export const Landing = () => {
     console.log(city)
 
     const handleSelect = (evt) =>{
-        console.log(evt)
         setCity(evt)
     }
 
@@ -38,7 +37,6 @@ export const Landing = () => {
                 </section>
                 <div className="container">
                     <DropdownButton
-                        alignEnd
                         title="Citys"
                         id="dropdown-menu-align-end"
                         onSelect={handleSelect}
@@ -46,7 +44,7 @@ export const Landing = () => {
                             {
                                 options.map(item => (
                                     <div>
-                                        <Dropdown.Item eventKey={item.name}>{item.name}</Dropdown.Item>
+                                        <Dropdown.Item eventKey={item.name} key={item.name}>{item.name}</Dropdown.Item>
                                         <Dropdown.Divider />
                                      </div>
                                 ))
